@@ -6,9 +6,17 @@ interface InputProps {
   type?: string;
   className?: string;
   title?: string;
+  value: string;
+  setValue: (val: string) => void;
 }
 
-const Input: React.FC<InputProps> = ({ className, title, type }) => {
+const Input: React.FC<InputProps> = ({
+  className,
+  title,
+  type,
+  value,
+  setValue,
+}) => {
   const id = uuidv4();
 
   return (
@@ -16,7 +24,13 @@ const Input: React.FC<InputProps> = ({ className, title, type }) => {
       <label className={styles.label} htmlFor={id}>
         {title}:
       </label>
-      <input className={styles.input} id={id} type={type} />
+      <input
+        onChange={(e) => setValue(e.target.value)}
+        value={value}
+        className={styles.input}
+        id={id}
+        type={type}
+      />
     </div>
   );
 };
