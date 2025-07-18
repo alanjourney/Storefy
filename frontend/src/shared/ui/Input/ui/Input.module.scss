@@ -1,0 +1,40 @@
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  color: $text-main-color;
+  font-size: $text-secondary-size;
+  line-height: 24px;
+  @media (min-width: $desktop-width) {
+    font-size: 20px;
+  }
+}
+
+.input {
+  height: 36px;
+  appearance: none;
+  outline: none;
+  border: 2px solid $border-color;
+  font-size: 20px;
+  font-weight: 400;
+  color: $text-main-color;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 3px;
+  @media (pointer: fine) {
+    &:not(:focus):hover {
+      opacity: 0.5;
+    }
+
+    &:focus:hover {
+      opacity: 1;
+      border-color: lighten($title-color, 30%);
+    }
+  }
+
+  &:focus {
+    border-color: $title-color;
+  }
+}

@@ -1,6 +1,8 @@
 import { useDispatch } from "react-redux";
 import styles from "./Registration.module.scss";
 import { setAuthView } from "app/redux/slices/authSlice";
+import Input from "shared/ui/Input";
+import Button from "shared/ui/Button";
 
 const Registration = () => {
   const dispatch = useDispatch();
@@ -14,13 +16,31 @@ const Registration = () => {
         </p>
       </div>
       <h1 className={styles.registrationTitle}>Registration</h1>
-      <button
-        onClick={() => {
-          handleAuth("greetings");
-        }}
-      >
-        back
-      </button>
+      <Input title="email" type="email" className={styles.registrationInput} />
+      <Input
+        title="password"
+        type="password"
+        className={styles.registrationInput}
+      />
+      <Input
+        title="Confirm your password"
+        type="password"
+        className={styles.registrationInput}
+      />
+      <Button className={styles.registrationButtonPosition} color="black">
+        Gotcha!
+      </Button>
+
+      <p className={styles.registrationBack}>
+        Already have Storefy?{" "}
+        <button
+          onClick={() => {
+            handleAuth("greetings");
+          }}
+        >
+          back
+        </button>
+      </p>
     </div>
   );
 };

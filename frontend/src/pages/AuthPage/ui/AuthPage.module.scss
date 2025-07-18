@@ -3,8 +3,6 @@
 }
 
 .authPageLeftSide {
-  border-right: $border;
-  height: calc(100vh - 50px);
   padding-top: 45px;
   padding-left: 30px;
   padding-right: 30px;
@@ -27,6 +25,7 @@
     padding-top: 65px;
     padding-left: 50px;
     padding-right: 50px;
+    border-right: $border;
   }
 }
 
