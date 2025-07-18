@@ -5,7 +5,7 @@ import clsx from "clsx";
 interface ButtonProps {
   children: ReactNode;
   color?: string;
-  className: string;
+  className?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({ children, color, className }) => {

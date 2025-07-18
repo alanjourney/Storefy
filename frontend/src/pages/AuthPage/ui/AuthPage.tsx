@@ -9,9 +9,12 @@ const AuthPage = () => {
 
   return (
     <div className={styles.authPage}>
-      {authView === "greetings" && <Greetings setAuthView={setAuthView} />}
-      {authView === "registration" && <Registration />}
-      {authView === "login" && <Login />}
+      <div className={styles.authPageLeftSide}>
+        {authView === "greetings" && <Greetings setAuthView={setAuthView} />}
+        {authView === "registration" && <Registration />}
+        {authView === "login" && <Login />}
+      </div>
+      <div className={styles.authPageRightSide}>111</div>
     </div>
   );
 };

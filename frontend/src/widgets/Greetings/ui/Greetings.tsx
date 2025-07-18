@@ -15,12 +15,10 @@ const Greetings: React.FC<GreetingsProps> = () => {
         </p>
       </div>
 
-      <h1 className={styles.greetingsTitle}>
-        Storefy Personal <br /> Cloud Storage
-      </h1>
+      <h1 className={styles.greetingsTitle}>Storefy Personal Cloud Storage</h1>
       <p className={styles.greetingsSubtitle}>
-        Save you photos and files to Storefy and access <br /> them from any
-        device, anywhere
+        Save you photos and files to Storefy and access them from any device,
+        anywhere
       </p>
       <div className={styles.greetingsButtonList}>
         <Button color="black">Get Started for Free</Button>

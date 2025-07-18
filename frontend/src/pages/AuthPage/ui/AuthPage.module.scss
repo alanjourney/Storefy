@@ -1,9 +1,43 @@
 .authPage {
-  width: 50%;
+  display: grid;
+}
+
+.authPageLeftSide {
   border-right: $border;
   height: calc(100vh - 50px);
+  padding-top: 45px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
 
-  padding-top: 65px;
-  padding-left: 50px;
-  padding-right: 50px;
+.authPageRightSide {
+  display: none;
+}
+
+@media (min-width: $tablet-width) {
+  .authPage {
+    grid-template-columns: 60% 40%;
+  }
+
+  .authPageRightSide {
+    display: flex;
+  }
+
+  .authPageLeftSide {
+    padding-top: 65px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .authPage {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .authPageLeftSide {
+    padding-top: 65px;
+    padding-left: 9.6%;
+    padding-right: 9.6%;
+  }
 }
