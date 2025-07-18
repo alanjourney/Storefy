@@ -1,0 +1,117 @@
+.navbar {
+  //height: $navbar-heght-tablet;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbarLogo {
+  font-size: 26px;
+  font-weight: 600;
+  color: $title-color;
+  border-bottom: $border;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: $navbar-heght-tablet;
+  display: flex;
+  align-items: center;
+}
+
+.navbarLinkWrapper {
+  padding: 0 30px;
+  border-bottom: none;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+
+.open {
+  max-height: 200px;
+  opacity: 1;
+  padding: 15px 30px;
+  border-bottom: $border;
+}
+
+.navbarLink {
+  opacity: 0;
+  transition: opacity 0.3s ease 0s;
+}
+
+.linkOpen {
+  opacity: 1;
+  transition: opacity 0.3s ease 0.3s;
+}
+
+.navbarButtonList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.navbarButton {
+  opacity: 0;
+  transition: opacity 0.3s ease 0s;
+}
+
+.navbarButtonOpen {
+  opacity: 1;
+  transition: opacity 0.3s ease 0.3s;
+}
+
+.navbarBurgerPosition {
+  position: absolute;
+  right: 30px;
+  top: 12.5px;
+}
+
+@media (min-width: $tablet-width) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: $navbar-heght-desktop;
+    padding: 0 50px;
+    border-bottom: $border;
+  }
+
+  .navbarLogo {
+    height: auto;
+    border-bottom: none;
+    padding: 0;
+  }
+
+  .navbarLinkWrapper {
+    display: block;
+    opacity: 1;
+    max-height: none;
+    height: auto;
+    padding: 0;
+    border-bottom: none;
+    transition: none;
+  }
+
+  .navbarLink {
+    display: inline-block;
+    opacity: 1;
+    transition: none;
+    font-size: $text-secondary-size;
+  }
+
+  .navbarButtonList {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .navbarButton {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .navbar {
+    padding: 0 4.5%;
+  }
+}

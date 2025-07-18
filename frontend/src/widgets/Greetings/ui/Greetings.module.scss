@@ -1,0 +1,65 @@
+.greetings {
+  display: flex;
+  flex-direction: column;
+}
+
+.greetingsTitle {
+  font-size: $title-size;
+  font-weight: 600;
+  color: $title-color;
+  margin-top: 25px;
+}
+
+.greetingsDescriptionWrapper {
+  background-color: $bg-color;
+  width: fit-content;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.greetingsDescription {
+  color: $text-secondary-color;
+  font-size: $text-secondary-size;
+  line-height: 24px;
+  & > span {
+    color: $title-color;
+  }
+}
+
+.greetingsSubtitle {
+  margin-top: 25px;
+  color: $text-main-color;
+  font-size: $text-main-size;
+}
+
+.greetingsButtonList {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+}
+
+.greetingsLogin {
+  margin-top: 25px;
+  color: $text-main-color;
+  font-size: $text-main-size;
+  & > button {
+    border: none;
+    background-color: transparent;
+    margin-top: 25px;
+    color: $title-color;
+    font-size: $text-main-size;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s;
+
+    @media (pointer: fine) {
+      &:hover {
+        color: $text-main-color;
+      }
+    }
+    &:active {
+      color: $title-color;
+      transform: scale(0.97);
+    }
+  }
+}

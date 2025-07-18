@@ -1,0 +1,42 @@
+@mixin button-style($bg-color, $text-color) {
+  appearance: none;
+  border: $border;
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 10px 30px;
+  cursor: pointer;
+  transition: 0.4s;
+  @media (min-width: $tablet-width) {
+    padding: 15px 30px;
+  }
+}
+
+@mixin button-hover($hover-bg, $hover-color) {
+  @media (pointer: fine) {
+    &:hover {
+      background-color: $hover-bg;
+      color: $hover-color;
+    }
+  }
+}
+
+@mixin button-active($active-bg, $active-color) {
+  &:active {
+    background-color: $active-bg;
+    color: $active-color;
+    transform: scale(0.97);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.black {
+  @include button-style($title-color, #fff);
+  @include button-hover(#fff, $title-color);
+  @include button-active($title-color, #fff);
+}
+
+.white {
+  @include button-style(#fff, $title-color);
+  @include button-hover($title-color, #fff);
+  @include button-active(#fff, $title-color);
+}

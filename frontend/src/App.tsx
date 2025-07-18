@@ -1,6 +1,6 @@
+import Navbar from "widgets/Navbar";
 import "./App.css";
 import AppRouter from "./AppRouter";
-import Navbar from "./components/navbar";
 
 function App() {
   return (

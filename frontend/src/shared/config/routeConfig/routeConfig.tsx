@@ -1,5 +1,5 @@
 import { Navigate, RouteObject } from "react-router-dom";
-import Registration from "../../../components/registration";
+import { AuthPage } from "pages/AuthPage";
 
 export enum AppRoutes {
   REGISTRATION = "registration",
@@ -14,7 +14,7 @@ export const RoutePath: Record<AppRoutes, string> = {
 export const routeConfig: Record<AppRoutes, RouteObject> = {
   [AppRoutes.REGISTRATION]: {
     path: RoutePath[AppRoutes.REGISTRATION],
-    element: <Registration />,
+    element: <AuthPage />,
   },
   [AppRoutes.DEFAULT]: {
     path: RoutePath[AppRoutes.DEFAULT],
