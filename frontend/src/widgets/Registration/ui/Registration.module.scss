@@ -1,2 +1,25 @@
 .registration {
 }
+
+.registrationDescriptionWrapper {
+  background-color: $bg-color;
+  width: fit-content;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.registrationDescription {
+  color: $text-secondary-color;
+  font-size: $text-secondary-size;
+  line-height: 24px;
+  & > span {
+    color: $title-color;
+  }
+}
+
+.registrationTitle {
+  font-size: $title-size;
+  font-weight: 600;
+  color: $title-color;
+  margin-top: 25px;
+}

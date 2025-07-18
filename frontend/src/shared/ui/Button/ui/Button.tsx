@@ -6,11 +6,20 @@ interface ButtonProps {
   children: ReactNode;
   color?: string;
   className?: string;
+  onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, color, className }) => {
+const Button: React.FC<ButtonProps> = ({
+  children,
+  color,
+  className,
+  onClick,
+}) => {
   return (
-    <button className={clsx(styles.button, color && styles[color], className)}>
+    <button
+      onClick={onClick}
+      className={clsx(styles.button, color && styles[color], className)}
+    >
       {children}
     </button>
   );

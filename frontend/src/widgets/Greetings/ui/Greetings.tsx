@@ -1,12 +1,12 @@
-import { Dispatch, SetStateAction } from "react";
+import { useDispatch } from "react-redux";
 import styles from "./Greetings.module.scss";
 import Button from "shared/ui/Button";
+import { setAuthView } from "app/redux/slices/authSlice";
 
-interface GreetingsProps {
-  setAuthView: Dispatch<SetStateAction<string>>;
-}
+const Greetings = () => {
+  const dispatch = useDispatch();
+  const handleAuth = (view: string) => dispatch(setAuthView(view));
 
-const Greetings: React.FC<GreetingsProps> = () => {
   return (
     <div className={styles.greetings}>
       <div className={styles.greetingsDescriptionWrapper}>
@@ -21,11 +21,14 @@ const Greetings: React.FC<GreetingsProps> = () => {
         anywhere
       </p>
       <div className={styles.greetingsButtonList}>
-        <Button color="black">Get Started for Free</Button>
+        <Button onClick={() => handleAuth("registration")} color="black">
+          Get Started for Free
+        </Button>
         <Button color="white">Plans and Pricing</Button>
       </div>
       <p className={styles.greetingsLogin}>
-        Already have Storefy? <button>Login</button>
+        Already have Storefy?{" "}
+        <button onClick={() => handleAuth("login")}>Login</button>
       </p>
     </div>
   );
